@@ -12,7 +12,7 @@ scrapeBtn.addEventListener("click", async () => {
   resultsContainer.innerHTML = "<p>Loading...</p>";
 
   try {
-    const res = await fetch(`http://localhost:3000/api/scrape?keyword=${(keyword)}`);
+    const res = await fetch(`http://localhost:3000/api/scrape?keyword=${(keyword)}`); // Adjust the URL as needed, this is the local server URL for the backend
     const data = await res.json();
 
     if (!Array.isArray(data)) {
@@ -20,6 +20,7 @@ scrapeBtn.addEventListener("click", async () => {
       return;
     }
 
+    //this is where we will display the results by iterating over the data array
     resultsContainer.innerHTML = data
       .map(
         (item) => `
