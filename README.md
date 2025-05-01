@@ -89,10 +89,10 @@ To run this project you need:
 Clone this repository to your desired folder:
 
 cd my-folder
-git clone https://github.com/sebalp100/am-scraper-backend
+git clone https://github.com/sebalp100/am-scraper-frontend
 
-You can find the front-end repo here:
-https://github.com/sebalp100/am-scraper-frontend
+You can find the backend repo here:
+https://github.com/sebalp100/am-scraper-backend
 
 ### Usage
 
