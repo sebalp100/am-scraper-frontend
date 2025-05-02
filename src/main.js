@@ -1,8 +1,9 @@
 const scrapeBtn = document.getElementById("scrapeBtn");
+const keywordInput = document.getElementById("keyword");
 const resultsContainer = document.getElementById("results");
 
-scrapeBtn.addEventListener("click", async () => {
-  const keyword = document.getElementById("keyword").value.trim();
+async function scrape() {
+  const keyword = keywordInput.value.trim();
 
   if (!keyword) {
     alert("Please enter a search keyword");
@@ -12,7 +13,7 @@ scrapeBtn.addEventListener("click", async () => {
   resultsContainer.innerHTML = "<p>Loading...</p>";
 
   try {
-    const res = await fetch(`http://localhost:3000/api/scrape?keyword=${(keyword)}`); // Adjust the URL as needed, this is the local server URL for the backend
+    const res = await fetch(`http://localhost:3000/api/scrape?keyword=${encodeURIComponent(keyword)}`); // Adjust the URL as needed, this is the local server URL for the backend
     const data = await res.json();
 
     if (!Array.isArray(data)) {
@@ -35,5 +36,13 @@ scrapeBtn.addEventListener("click", async () => {
       .join("");
   } catch (err) {
     resultsContainer.innerHTML = `<p>Fetch failed: ${err.message}</p>`;
+  }
+}
+
+scrapeBtn.addEventListener("click", scrape);
+
+keywordInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    scrape();
   }
 });
