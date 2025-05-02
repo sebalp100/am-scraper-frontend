@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik" ,sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: #f4f4f4;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #0073e6;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+  font-family: "Rubik", sans-serif;
+}
+
+button:hover {
+
+  background: #005bb5;
+}
+
+#results {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.product {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.product h3 {
+  font-size: 1rem;
+}
+
+.product img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+ .product {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-details {
+    text-align: center;
+  }
+  
+}
